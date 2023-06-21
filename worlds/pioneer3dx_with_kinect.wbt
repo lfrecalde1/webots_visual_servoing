@@ -1,0 +1,80 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/microsoft/protos/Kinect.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+  info [
+    "Pioneer 3DX robot (Adept Mobile Robots)"
+    "This two-wheel two-motor, differential wheel robot is equipped with a Microsoft kinect"
+    "It is programmed to perform a simple obstacle avoidance behavior based on sensed values situated on a medium-height line of the kinect display"
+  ]
+  title "Pioneer 3DX equipped with a Microsoft kinect"
+  basicTimeStep 20
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation 0.23357107776395977 0.6827903569089767 -0.692272980943424 0.9178930042961537
+  position -5.497773154074465 6.059153866666234 5.981295620682534
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 8 8
+  floorTileSize 1 1
+  floorAppearance Parquetry {
+  }
+  wallHeight 0.4
+}
+DEF PIONEER_3DX Pioneer3dx {
+  hidden position_0_0 18.807739823488955
+  hidden position_0_1 88.54808289069052
+  hidden position_0_2 80.09958123424971
+  hidden linearVelocity_0 -1.798330705213513e-07 -4.739234807025137e-08 -6.033832047062265e-10
+  hidden angularVelocity_0 -4.728129036772287e-08 4.85022337549662e-07 1.4402925199094005e-06
+  hidden rotation_1 -0.5612567655240348 0.5852310832032945 0.5852310846205941 4.164481842897359
+  hidden position_1_0 -463.5706645018769
+  hidden linearVelocity_1 3.995898829484725e-07 5.092474268915731e-08 1.0534041419299138e-08
+  hidden angularVelocity_1 -3.3743597054824116e-08 4.1310136344687026e-07 1.470621472273639e-06
+  hidden rotation_2 1 0 0 1.3850482294125226
+  hidden linearVelocity_2 1.1919763221214472e-06 2.0243243048395177e-07 1.0703916752092473e-08
+  hidden angularVelocity_2 5.418886988533768e-07 4.907623218141793e-07 1.4727346713893565e-06
+  hidden rotation_4 0.5375005872454959 -0.5375006574324075 0.6497585412832036 4.29400358163276
+  hidden linearVelocity_4 -9.168157960407569e-07 5.612842099339046e-07 -8.30592502826807e-08
+  hidden angularVelocity_4 -2.0958196180229428e-07 5.005862587853506e-07 1.4403152589143383e-06
+  hidden rotation_9 0.3565282733213143 -0.3565282433459021 -0.8635827707980327 1.7169387703221781
+  hidden linearVelocity_9 -1.5483592562221266e-07 -7.70963639657465e-07 7.220357830984102e-08
+  hidden angularVelocity_9 7.454411698579544e-08 5.417171287031619e-07 1.4403195083502507e-06
+  hidden position_30_0 -5.957591748232862e-14
+  hidden linearVelocity_31 -4.192435746896983e-08 -2.0856265292579226e-08 -5.09532542825042e-09
+  hidden angularVelocity_31 -4.728065265324057e-08 4.850225680859917e-07 1.4402926602928496e-06
+  translation 0.6467782347963776 1.1608104546423623 0.09570110501108783
+  rotation -0.017807598772369173 -0.023472059118223136 -0.9995658817040091 1.2993278464532403
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    InertialUnit {
+      noise 0.01
+    }
+    GPS {
+      accuracy 0.02
+    }
+    Kinect {
+      translation 0 0 0.15
+      width 300
+      height 300
+      maxRange 5
+    }
+  ]
+}
+WoodenBox {
+  translation 0.188964 -1.84421 0.3
+  name "wooden box(2)"
+}

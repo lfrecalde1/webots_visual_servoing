@@ -1,0 +1,11 @@
+<launch>
+    <!-- start Webots -->
+    <arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
+    <include file="$(find webots_ros)/launch/webots.launch">
+        <arg name="mode" value="realtime"/>
+        <arg name="no-gui" value="false"/>
+        <arg name="world" value="$(find webots_visual_servoing)/worlds/pioneer3dx_with_kinect.wbt"/>
+    </include>
+    <node pkg = "webots_visual_servoing" name = "webots_simulator" type = "main.py" output = "screen">
+    </node>
+</launch>
